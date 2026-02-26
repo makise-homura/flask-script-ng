@@ -177,7 +177,7 @@ class AppForTesting(object):
 
 class TestManager:
 
-    def setup(self):
+    def setup_method(self):
 
         self.app = AppForTesting()
 
@@ -739,7 +739,7 @@ class TestManager:
 
 class TestSubManager:
 
-    def setup(self):
+    def setup_method(self):
 
         self.app = AppForTesting()
 
