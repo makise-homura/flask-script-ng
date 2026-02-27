@@ -19,13 +19,13 @@ from ._compat import izip, text_type
 class InvalidCommand(Exception):
     """\
         This is a generic error for "bad" commands.
-        It is not used in Flask-Script itself, but you should throw
+        It is not used in Flask-Script-NG itself, but you should throw
         this error (or one derived from it) in your command handlers,
         and your main code should display this error's message without
         a stack trace.
 
         This way, we maintain interoperability if some other plug-in code
-        supplies Flask-Script hooks.
+        supplies Flask-Script-NG hooks.
         """
     pass
 
@@ -182,7 +182,7 @@ class Command(object):
             parent = getattr(parent,'parent',None)
 
         if help_args:
-            from flask_script import add_help
+            from flask_script_ng import add_help
             add_help(parser,help_args)
 
         for option in self.get_options():
