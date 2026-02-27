@@ -852,7 +852,10 @@ class TestSubManager:
         code = run('manage.py sub_manager simple -?', manager.run)
         out, err = capsys.readouterr()
         assert code == 0
-        assert 'sub_manager [--foo] simple [-?]' in out
+        if sys.version_info < (3, 14):
+            assert 'sub_manager [--foo] simple [-?]' in out
+        else:
+            assert 'sub_manager simple [-?]' in out
         assert 'simple command' in out
 
     def test_submanager_has_no_default_commands(self):
