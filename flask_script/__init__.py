@@ -225,9 +225,9 @@ class Manager(object):
                 self.print_help()
                 self.exit(2)
 
-            return self._parse_known_args2(arg_strings, *args, **kw)
+            return self._parse_known_args_old(arg_strings, *args, **kw)
 
-        parser._parse_known_args2 = parser._parse_known_args
+        parser._parse_known_args_old = parser._parse_known_args
         parser._parse_known_args = types.MethodType(_parse_known_args, parser)
 
     def get_options(self):
