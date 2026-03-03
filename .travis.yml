@@ -1,4 +1,5 @@
-sudo: false
+os: linux
+dist: noble
 language: python
 python:
     - '3.8'
